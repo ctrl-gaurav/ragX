@@ -1,0 +1,90 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pyragx"
+dynamic = ["version"]
+description = "Agentic retrieval at scale: an agent ranks and reads passages, a chain of sub-questions names the evidence the question leaves unnamed, and one call answers with exact citations."
+readme = "README_PYPI.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "Gaurav Srivastava", email = "gks@vt.edu" }]
+maintainers = [{ name = "Gaurav Srivastava", email = "gks@vt.edu" }]
+keywords = ["rag", "agentic-rag", "retrieval", "llm", "multi-hop", "question-answering", "bm25", "dense-retrieval", "citations"]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Indexing",
+    "Typing :: Typed",
+]
+dependencies = [
+    "pydantic>=2.5",
+    "python-dotenv>=1.0",
+    "httpx>=0.24",
+    "openai>=1.40",            # every OpenAI-compatible provider (OpenAI, vLLM, Groq, Together, ...)
+    "rich>=13.0",
+    "typer>=0.9",
+    "orjson>=3.9",
+    "tenacity>=8.2",
+    "pypdf>=4.0",              # document loaders (no torch)
+    "beautifulsoup4>=4.12",
+    "markdownify>=0.11",
+    "lxml>=4.9",
+]
+
+[project.optional-dependencies]
+dense = ["sentence-transformers>=3.0", "numpy>=1.24"]             # ragx, ragx-core, -fused, -rerank, -fast, -think
+anthropic = ["anthropic>=0.40"]
+google = ["google-generativeai>=0.7"]
+local = ["transformers>=4.45", "torch>=2.1", "accelerate>=0.30"]   # hf: models on your own GPU
+server = ["fastapi>=0.110", "uvicorn>=0.27"]                       # OpenAI-compatible /v1 endpoint
+ui = ["textual>=0.60"]
+semantic = ["sentence-transformers>=3.0", "numpy>=1.24"]           # classic agent's SEMANTIC tool
+dev = ["pytest>=7.4", "pytest-cov>=4.1", "ruff>=0.5", "mypy>=1.8", "build>=1.0", "twine>=5.0", "types-beautifulsoup4"]
+all = ["pyragx[dense,anthropic,google,local,server,ui]"]
+
+[project.urls]
+Homepage = "https://ctrl-gaurav.github.io/ragX/"
+Documentation = "https://ctrl-gaurav.github.io/ragX/docs/"
+Repository = "https://github.com/ctrl-gaurav/ragX"
+Issues = "https://github.com/ctrl-gaurav/ragX/issues"
+Changelog = "https://github.com/ctrl-gaurav/ragX/blob/main/CHANGELOG.md"
+
+[project.scripts]
+ragx = "ragx.cli:app"
+
+[tool.hatch.version]
+path = "ragx/__about__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["ragx"]
+
+[tool.hatch.build.targets.sdist]
+include = ["ragx", "tests", "README.md", "README_PYPI.md", "LICENSE", "CHANGELOG.md", "pyproject.toml"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "C4", "SIM"]
+ignore = ["E501", "B008", "C901"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.mypy]
+python_version = "3.10"
+ignore_missing_imports = true
+warn_unused_ignores = false

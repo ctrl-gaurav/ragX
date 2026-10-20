@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# ragX caches (text mirror, index, embeddings)
+.ragx/
+
+# Node: website and docs
+node_modules/
+website/dist/
+*.tsbuildinfo
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+
+# Editors and OS
+.vscode/
+.idea/
+.DS_Store

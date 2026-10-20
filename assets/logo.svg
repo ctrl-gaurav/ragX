@@ -1,0 +1,14 @@
+<svg width="300" height="110" viewBox="0 0 300 110" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="ragX">
+  <defs>
+    <linearGradient id="ragx-accent" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <filter id="ragx-glow" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="4" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <text x="24" y="76" font-family="'Inter','Segoe UI',Helvetica,Arial,sans-serif" font-weight="800" font-size="68" letter-spacing="-2" fill="#f8fafc">rag<tspan fill="url(#ragx-accent)" filter="url(#ragx-glow)">X</tspan></text>
+</svg>

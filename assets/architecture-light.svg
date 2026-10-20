@@ -1,0 +1,65 @@
+<svg width="1280" height="460" viewBox="0 0 1280 460" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="How ragX works: forage loop, slot chain, compose">
+  <defs>
+    <linearGradient id="acc" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#38bdf8"/>
+      <stop offset="0.5" stop-color="#818cf8"/>
+      <stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0L10 5L0 10z" fill="#818cf8"/>
+    </marker>
+  </defs>
+  <rect width="1280" height="460" rx="24" fill="#ffffff"/>
+  <rect x="0.5" y="0.5" width="1279" height="459" rx="23.5" stroke="#0f172a" stroke-opacity="0.1"/>
+  <g font-family="'Inter','Segoe UI',Helvetica,Arial,sans-serif">
+    <text x="40" y="52" font-size="22" font-weight="800" fill="#0f172a">How ragX works</text>
+    <text x="40" y="78" font-size="14" fill="#475569">Two separate routes name the evidence the question leaves unnamed; one call composes the answer.</text>
+
+    <!-- question -->
+    <rect x="40" y="170" width="170" height="120" rx="16" fill="#0f172a" fill-opacity="0.03" stroke="#0f172a" stroke-opacity="0.15"/>
+    <text x="58" y="200" font-size="12" font-weight="700" letter-spacing="1.5" fill="#64748b">QUESTION</text>
+    <text x="58" y="228" font-size="14" fill="#1e293b">Who is the spouse</text>
+    <text x="58" y="248" font-size="14" fill="#1e293b">of the actor who plays</text>
+    <text x="58" y="268" font-size="14" fill="#1e293b">Jarvis in Iron Man?</text>
+
+    <!-- forage loop -->
+    <rect x="258" y="112" width="356" height="140" rx="16" fill="#38bdf8" fill-opacity="0.06" stroke="#38bdf8" stroke-opacity="0.45"/>
+    <text x="278" y="142" font-size="12" font-weight="700" letter-spacing="1.5" fill="#38bdf8">1 · FORAGE LOOP</text>
+    <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="13">
+      <text x="278" y="172" fill="#a21caf">RANK</text><text x="330" y="172" fill="#334155">Jarvis Iron Man actor</text>
+      <text x="278" y="194" fill="#047857">READ</text><text x="330" y="194" fill="#334155">Iron Man (2008 film)</text>
+      <text x="278" y="216" fill="#a21caf">RANK</text><text x="330" y="216" fill="#0f172a" font-weight="700">Paul Bettany spouse</text>
+      <text x="278" y="238" fill="#64748b">≤ 10 turns · queries follow what was read</text>
+    </g>
+
+    <!-- slot chain -->
+    <rect x="258" y="276" width="356" height="124" rx="16" fill="#818cf8" fill-opacity="0.06" stroke="#818cf8" stroke-opacity="0.45"/>
+    <text x="278" y="306" font-size="12" font-weight="700" letter-spacing="1.5" fill="#818cf8">2 · SLOT CHAIN</text>
+    <g font-family="'JetBrains Mono',ui-monospace,monospace" font-size="13">
+      <text x="278" y="334" fill="#334155"><tspan fill="#4338ca">#1</tspan> Who plays Jarvis? → Paul Bettany</text>
+      <text x="278" y="358" fill="#334155"><tspan fill="#4338ca">#2</tspan> Spouse of #1? → Jennifer Connelly</text>
+      <text x="278" y="382" fill="#64748b">≤ 4 hops · 4 passages each</text>
+    </g>
+
+    <!-- compose -->
+    <rect x="676" y="150" width="326" height="160" rx="16" fill="#c084fc" fill-opacity="0.06" stroke="#c084fc" stroke-opacity="0.45"/>
+    <text x="696" y="180" font-size="12" font-weight="700" letter-spacing="1.5" fill="#c084fc">3 · COMPOSE (ONE CALL)</text>
+    <text x="696" y="210" font-size="14" fill="#1e293b">8 read passages</text>
+    <text x="696" y="234" font-size="14" fill="#1e293b">12 hop and surfaced passages</text>
+    <text x="696" y="258" font-size="14" fill="#1e293b">+ backfill: the question's top 48</text>
+    <text x="696" y="288" font-size="13" fill="#475569">whole passages · fenced as untrusted data</text>
+
+    <!-- answer -->
+    <rect x="1056" y="176" width="190" height="108" rx="16" fill="url(#acc)" fill-opacity="0.12" stroke="url(#acc)" stroke-opacity="0.8"/>
+    <text x="1074" y="206" font-size="12" font-weight="700" letter-spacing="1.5" fill="#475569">ANSWER</text>
+    <text x="1074" y="236" font-size="18" font-weight="800" fill="#0f172a">Jennifer Connelly</text>
+    <text x="1074" y="262" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="12" fill="#38bdf8">↳ Paul Bettany:3-4</text>
+
+    <!-- arrows -->
+    <path d="M210 210 C 236 210, 236 182, 254 182" stroke="#818cf8" stroke-width="1.6" marker-end="url(#arr)"/>
+    <path d="M210 250 C 236 250, 236 338, 254 338" stroke="#818cf8" stroke-width="1.6" marker-end="url(#arr)"/>
+    <path d="M614 182 C 646 182, 646 214, 672 214" stroke="#818cf8" stroke-width="1.6" marker-end="url(#arr)"/>
+    <path d="M614 338 C 646 338, 646 262, 672 262" stroke="#818cf8" stroke-width="1.6" marker-end="url(#arr)"/>
+    <path d="M1002 230 H1052" stroke="#818cf8" stroke-width="1.6" marker-end="url(#arr)"/>
+  </g>
+</svg>
