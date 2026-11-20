@@ -1,10 +1,22 @@
 # Citing ragX
 
-The paper describing ragX, *ragX: Agentic Retrieval at Scale*, is coming soon. Until it is posted,
-please cite the software:
+If you use ragX, please cite the paper, *ragX: Agentic Retrieval at Scale*
+([PDF](https://ctrl-gaurav.github.io/ragX/paper/ragX.pdf) · [paper page](https://ctrl-gaurav.github.io/ragX/paper/); the arXiv link is coming soon):
 
 ```bibtex
-@software{srivastava2026ragx,
+@misc{srivastava2026ragx,
+  title  = {ragX: Agentic Retrieval at Scale},
+  author = {Srivastava, Gaurav and Bhandari, Rhushabh and Hussain, Aafiya and Fang, Yi and Wang, Xuan},
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://ctrl-gaurav.github.io/ragX/paper/}
+}
+```
+
+To cite the software itself:
+
+```bibtex
+@software{srivastava2026ragx_software,
   author  = {Srivastava, Gaurav},
   title   = {ragX: Agentic Retrieval at Scale},
   year    = {2026},
@@ -13,4 +25,4 @@ please cite the software:
 }
 ```
 
-This page will carry the paper's citation once it is available.
+This page will carry the arXiv identifier once the paper is announced.

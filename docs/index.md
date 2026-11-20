@@ -55,7 +55,7 @@ five QA datasets:
 | **17 of 21** | open-weight models on which ragX leads single-shot retrieval (a ragX variant leads on 19) |
 
 With a plain BM25 index, ragX also beats every dense single-shot baseline at 21M passages. The
-paper with the full study is coming soon.
+[paper](https://ctrl-gaurav.github.io/ragX/paper/ragX.pdf) has the full study.
 
 ## What you get
 

@@ -13,7 +13,7 @@
   <a href="https://ctrl-gaurav.github.io/ragX/"><b>Website</b></a> ·
   <a href="https://ctrl-gaurav.github.io/ragX/docs/"><b>Documentation</b></a> ·
   <a href="https://pypi.org/project/pyragx/"><b>PyPI</b></a> ·
-  <b>Paper (coming soon)</b>
+  <a href="https://ctrl-gaurav.github.io/ragX/paper/"><b>Paper</b></a> (arXiv coming soon)
 </p>
 
 **ragX** is an open-source, training-free agentic retrieval framework. On millions of documents,
@@ -33,11 +33,12 @@ print(answer.sources)   # ['ashford_university.md:1-5', 'thomas_wren.md:1-5']
 
 ## News
 
+- **2026-11-20** · The paper, *ragX: Agentic Retrieval at Scale*, is out: [PDF](https://ctrl-gaurav.github.io/ragX/paper/ragX.pdf) ·
+  [paper page](https://ctrl-gaurav.github.io/ragX/paper/). The arXiv link is coming soon.
 - **2026-10-20** · ragX 0.0.1 is on PyPI: `pip install pyragx`. All seven variants of the paper's method,
   BM25 and dense, fused and reranked ranking, a command line and an OpenAI-compatible server.
 - **2026-10-20** · The [website](https://ctrl-gaurav.github.io/ragX/) and the
   [documentation](https://ctrl-gaurav.github.io/ragX/docs/) are live.
-- **Coming soon** · The paper, *ragX: Agentic Retrieval at Scale*, on arXiv.
 
 ## Why ragX
 
@@ -73,8 +74,8 @@ Search-R1:
 | **22× fewer** | prompt tokens than DCI-Agent-Lite |
 | **17 of 21** | open-weight models on which ragX leads single-shot retrieval (a ragX variant leads on 19) |
 
-With BM25 alone, ragX beats every dense single-shot baseline at 21M passages. The paper is coming
-soon.
+With BM25 alone, ragX beats every dense single-shot baseline at 21M passages. The full study is in the
+[paper](https://ctrl-gaurav.github.io/ragX/paper/ragX.pdf).
 
 ## Install
 
@@ -128,10 +129,23 @@ Issues and pull requests are welcome; see [CONTRIBUTING.md](https://github.com/c
 
 ## Citation
 
-The paper, *ragX: Agentic Retrieval at Scale*, is coming soon. Until then, please cite the software:
+If you use ragX, please cite the paper, *ragX: Agentic Retrieval at Scale*
+([PDF](https://ctrl-gaurav.github.io/ragX/paper/ragX.pdf), arXiv link coming soon):
 
 ```bibtex
-@software{srivastava2026ragx,
+@misc{srivastava2026ragx,
+  title  = {ragX: Agentic Retrieval at Scale},
+  author = {Srivastava, Gaurav and Bhandari, Rhushabh and Hussain, Aafiya and Fang, Yi and Wang, Xuan},
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://ctrl-gaurav.github.io/ragX/paper/}
+}
+```
+
+To cite the software itself:
+
+```bibtex
+@software{srivastava2026ragx_software,
   author  = {Srivastava, Gaurav},
   title   = {ragX: Agentic Retrieval at Scale},
   year    = {2026},

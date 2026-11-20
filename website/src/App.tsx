@@ -9,6 +9,7 @@ import { useCountUp, useReveal } from "./hooks";
 const GH = "https://github.com/ctrl-gaurav/ragX";
 const PYPI = "https://pypi.org/project/pyragx/";
 const DOCS = `${import.meta.env.BASE_URL}docs/`;
+const PAPER = `${import.meta.env.BASE_URL}paper/`;
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -178,9 +179,9 @@ function Hero() {
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
             <a href={GH} className="flex items-center gap-1.5 transition hover:text-slate-200"><GitHubIcon /> GitHub</a>
             <a href={PYPI} className="transition hover:text-slate-200">PyPI</a>
-            <span className="flex items-center gap-1.5">
-              Paper <span className="rounded-full border border-white/10 px-2 py-0.5 text-[10.5px]">coming soon</span>
-            </span>
+            <a href={PAPER} className="flex items-center gap-1.5 transition hover:text-slate-200">
+              Paper <span className="rounded-full border border-white/10 px-2 py-0.5 text-[10.5px]">arXiv coming soon</span>
+            </a>
           </div>
         </div>
         <div className="animate-fadeup [animation-delay:0.15s]">
@@ -487,6 +488,9 @@ function CTA() {
               <a href={GH} className="flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold text-slate-200 transition hover:bg-white/5">
                 <GitHubIcon /> Star on GitHub
               </a>
+              <a href={PAPER} className="flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold text-slate-200 transition hover:bg-white/5">
+                Read the paper
+              </a>
             </div>
           </div>
         </div>
@@ -507,7 +511,7 @@ function Footer() {
           <a className="hover:text-slate-200" href={DOCS}>Docs</a>
           <a className="hover:text-slate-200" href={GH}>GitHub</a>
           <a className="hover:text-slate-200" href={PYPI}>PyPI</a>
-          <span>Paper · coming soon</span>
+          <a className="hover:text-slate-200" href={PAPER}>Paper</a>
         </div>
       </div>
     </footer>

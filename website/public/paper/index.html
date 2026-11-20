@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ragX: Agentic Retrieval at Scale</title>
+    <meta
+      name="description"
+      content="ragX: Agentic Retrieval at Scale. Gaurav Srivastava, Rhushabh Bhandari, Aafiya Hussain, Yi Fang, Xuan Wang. Preprint, 2026."
+    />
+    <link rel="canonical" href="https://ctrl-gaurav.github.io/ragX/paper/" />
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg" />
+
+    <!-- Bibliographic metadata (Highwire Press tags) read by Google Scholar and reference managers. -->
+    <meta name="citation_title" content="ragX: Agentic Retrieval at Scale" />
+    <meta name="citation_author" content="Srivastava, Gaurav" />
+    <meta name="citation_author_institution" content="Virginia Tech" />
+    <meta name="citation_author" content="Bhandari, Rhushabh" />
+    <meta name="citation_author" content="Hussain, Aafiya" />
+    <meta name="citation_author_institution" content="Virginia Tech" />
+    <meta name="citation_author" content="Fang, Yi" />
+    <meta name="citation_author_institution" content="Virginia Tech" />
+    <meta name="citation_author" content="Wang, Xuan" />
+    <meta name="citation_author_institution" content="Virginia Tech" />
+    <meta name="citation_publication_date" content="2026/10/20" />
+    <meta name="citation_online_date" content="2026/11/20" />
+    <meta name="citation_technical_report_institution" content="Virginia Tech" />
+    <meta name="citation_language" content="en" />
+    <meta name="citation_pdf_url" content="https://ctrl-gaurav.github.io/ragX/paper/ragX.pdf" />
+    <meta name="citation_abstract_html_url" content="https://ctrl-gaurav.github.io/ragX/paper/" />
+    <meta name="citation_keywords" content="retrieval-augmented generation; agentic retrieval; multi-hop question answering; dense retrieval; BM25" />
+
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ragX: Agentic Retrieval at Scale" />
+    <meta property="og:description" content="Find the evidence your question does not name. Preprint, 2026." />
+    <meta property="og:url" content="https://ctrl-gaurav.github.io/ragX/paper/" />
+
+    <style>
+      :root {
+        --bg: #080b10; --fg: #e2e8f0; --muted: #94a3b8; --line: rgba(255,255,255,0.1);
+        --card: rgba(255,255,255,0.04); --accent: #818cf8; --accent-ink: #0b0f1a;
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #ffffff; --fg: #0f172a; --muted: #475569; --line: rgba(15,23,42,0.12);
+          --card: rgba(15,23,42,0.03); --accent: #4f46e5; --accent-ink: #ffffff;
+        }
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 Inter, system-ui, -apple-system, "Segoe UI", sans-serif; }
+      main { max-width: 820px; margin: 0 auto; padding: 56px 20px 72px; }
+      .kicker { color: var(--muted); font-size: 14px; letter-spacing: 0.02em; }
+      h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.2; margin: 10px 0 18px; }
+      .authors { font-size: 17px; margin: 0; }
+      .affil { color: var(--muted); font-size: 14px; margin: 6px 0 0; }
+      .status { display: inline-block; margin-top: 18px; padding: 4px 12px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; color: var(--muted); }
+      .links { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 8px; }
+      .links a { padding: 10px 18px; border-radius: 10px; border: 1px solid var(--line); color: var(--fg); text-decoration: none; font-weight: 600; font-size: 15px; }
+      .links a.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+      .links a:hover { border-color: var(--accent); }
+      h2 { font-size: 20px; margin: 40px 0 10px; }
+      p.abstract { text-align: justify; hyphens: auto; }
+      pre { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; overflow-x: auto; font: 13.5px/1.55 "JetBrains Mono", ui-monospace, Menlo, monospace; }
+      footer { margin-top: 48px; color: var(--muted); font-size: 14px; }
+      footer a { color: var(--muted); }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="kicker">Preprint · October 2026</div>
+      <h1>ragX: Agentic Retrieval at Scale</h1>
+      <p class="authors">Gaurav Srivastava, Rhushabh Bhandari, Aafiya Hussain, Yi Fang, Xuan Wang</p>
+      <p class="affil">Department of Computer Science, Virginia Tech · Independent Researcher</p>
+      <span class="status">arXiv link coming soon</span>
+
+      <div class="links">
+        <a class="primary" href="ragX.pdf">Paper (PDF)</a>
+        <a href="https://github.com/ctrl-gaurav/ragX">Code</a>
+        <a href="../">Website</a>
+        <a href="../docs/">Documentation</a>
+        <a href="https://pypi.org/project/pyragx/">PyPI</a>
+      </div>
+
+      <h2>Abstract</h2>
+      <p class="abstract">
+        Retrieval-augmented generation (RAG) with one retrieval step works well on small collections, but on
+        millions of documents a question's evidence competes with far more passages for the top slots, and
+        accuracy drops. First, we study why. On nested uniform random samples of Wikipedia (240K&rarr;21M
+        passages) that all keep the gold evidence, single-shot retrieval misses the evidence a question does not
+        name 4&times; faster than the evidence it names; a larger embedder and a deep reranker do not change this,
+        and in an oracle test on two-hop questions a query that names the missing entity removes the drop.
+        Second, we propose ragX, an easy-to-use, open-source and training-free agentic retrieval framework that
+        names missing evidence through two separate routes, a search-and-read agent and a chain of
+        sub-questions, with dense, BM25, reranked and thinking variants. Third, we benchmark it against
+        traditional retrieval (BM25, dense, reranked), agentic methods (ReAct, Self-Ask, IRCoT) and recent systems
+        (DCI-Agent-Lite, Search-R1) with 27 language models on five QA datasets, and ablate what helps an agentic
+        retriever. Finally, on all of Wikipedia ragX leads the strongest single-shot baseline by 8.1 F1, and with
+        a dense index the lead of every iterative method we test grows with the corpus, so small-corpus rankings
+        can reverse. ragX uses 22&times; fewer prompt tokens than DCI-Agent-Lite, and with BM25 alone it beats
+        every dense single-shot baseline. Masking the names it writes removes most of the gain but only about
+        half of its growth; ReAct given ragX's strategy comes within 1 F1 of it, and Search-R1 leads it at the 7B
+        model size it was trained for.
+      </p>
+
+      <h2>Citation</h2>
+      <pre>@misc{srivastava2026ragx,
+  title  = {ragX: Agentic Retrieval at Scale},
+  author = {Srivastava, Gaurav and Bhandari, Rhushabh and Hussain, Aafiya and Fang, Yi and Wang, Xuan},
+  year   = {2026},
+  note   = {Preprint},
+  url    = {https://ctrl-gaurav.github.io/ragX/paper/}
+}</pre>
+
+      <footer>
+        Submitted to arXiv on 20 October 2026 and posted here on 20 November 2026. The arXiv version will be linked here once it is announced.
+      </footer>
+    </main>
+  </body>
+</html>

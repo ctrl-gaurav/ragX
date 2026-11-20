@@ -1,0 +1,35 @@
+cff-version: 1.2.0
+message: "If you use ragX, please cite the paper below."
+title: "ragX: Agentic Retrieval at Scale"
+type: software
+authors:
+  - family-names: Srivastava
+    given-names: Gaurav
+    affiliation: Virginia Tech
+version: 0.0.1
+date-released: 2026-10-20
+license: Apache-2.0
+repository-code: "https://github.com/ctrl-gaurav/ragX"
+url: "https://ctrl-gaurav.github.io/ragX/"
+preferred-citation:
+  type: article
+  title: "ragX: Agentic Retrieval at Scale"
+  authors:
+    - family-names: Srivastava
+      given-names: Gaurav
+      affiliation: Virginia Tech
+    - family-names: Bhandari
+      given-names: Rhushabh
+      affiliation: Independent Researcher
+    - family-names: Hussain
+      given-names: Aafiya
+      affiliation: Virginia Tech
+    - family-names: Fang
+      given-names: Yi
+      affiliation: Virginia Tech
+    - family-names: Wang
+      given-names: Xuan
+      affiliation: Virginia Tech
+  year: 2026
+  notes: "Preprint. arXiv link coming soon."
+  url: "https://ctrl-gaurav.github.io/ragX/paper/"
