@@ -10,6 +10,16 @@ const GH = "https://github.com/ctrl-gaurav/ragX";
 const PYPI = "https://pypi.org/project/pyragx/";
 const DOCS = `${import.meta.env.BASE_URL}docs/`;
 const PAPER = `${import.meta.env.BASE_URL}paper/`;
+const PAPER_PDF = `${PAPER}ragX.pdf`;
+
+function PaperIcon() {
+  return (
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z" />
+      <path d="M14 3v5h5M9 13h6M9 17h6" />
+    </svg>
+  );
+}
 
 function Wordmark({ className = "" }: { className?: string }) {
   return (
@@ -105,6 +115,7 @@ function Nav() {
             <a key={h} className="transition hover:text-white" href={h}>{l}</a>
           ))}
           <a className="transition hover:text-white" href={DOCS}>Docs</a>
+          <a className="transition hover:text-white" href={PAPER}>Paper</a>
         </nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
@@ -118,7 +129,7 @@ function Nav() {
       </div>
       {open && (
         <div className="border-t border-white/10 bg-ink-950/95 px-6 py-4 md:hidden">
-          {[...NAV, ["Docs", DOCS], ["GitHub", GH]].map(([l, h]) => (
+          {[...NAV, ["Docs", DOCS], ["Paper", PAPER], ["GitHub", GH]].map(([l, h]) => (
             <a key={l} href={h} onClick={() => setOpen(false)} className="block py-2 text-slate-300">{l}</a>
           ))}
         </div>
@@ -174,12 +185,15 @@ function Hero() {
             <a href={DOCS} className="btn-grad rounded-xl px-6 py-3 font-semibold text-ink-950 shadow-lg shadow-indigo-500/20">
               Get started
             </a>
+            <a href={PAPER_PDF} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 font-semibold text-slate-200 transition hover:bg-white/10">
+              <PaperIcon /> Paper (PDF)
+            </a>
             <InstallPill />
           </div>
           <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500">
             <a href={GH} className="flex items-center gap-1.5 transition hover:text-slate-200"><GitHubIcon /> GitHub</a>
             <a href={PYPI} className="transition hover:text-slate-200">PyPI</a>
-            <a href={PAPER} className="flex items-center gap-1.5 transition hover:text-slate-200">
+            <a href={PAPER_PDF} target="_blank" rel="noreferrer" className="flex items-center gap-1.5 transition hover:text-slate-200">
               Paper <span className="rounded-full border border-white/10 px-2 py-0.5 text-[10.5px]">arXiv coming soon</span>
             </a>
           </div>
@@ -488,8 +502,8 @@ function CTA() {
               <a href={GH} className="flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold text-slate-200 transition hover:bg-white/5">
                 <GitHubIcon /> Star on GitHub
               </a>
-              <a href={PAPER} className="flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold text-slate-200 transition hover:bg-white/5">
-                Read the paper
+              <a href={PAPER_PDF} target="_blank" rel="noreferrer" className="flex items-center gap-2 rounded-xl border border-white/15 px-6 py-3 font-semibold text-slate-200 transition hover:bg-white/5">
+                <PaperIcon /> Read the paper
               </a>
             </div>
           </div>
